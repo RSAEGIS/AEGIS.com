@@ -3737,3 +3737,70 @@ body {
 @media (max-width: 600px) {
     .action-section { display: none; }
 }
+
+/* =========================================
+   DESKTOP MODE ON MOBILE — FORCE LAYOUT
+   Ensures the site looks identical on
+   desktop mode in mobile browsers
+========================================= */
+
+/* Prevent font size inflation on iOS/Android */
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Force minimum body width */
+body {
+    min-width: 1200px;
+}
+
+/* Prevent tap highlight on mobile */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scroll issues */
+.main-navbar,
+.aegis-hero-viewport,
+.game-modes-section,
+.key-pillars-section,
+.ops-section,
+.factions-section,
+.arsenal-section,
+.esports-section,
+.arhs-section,
+.bp-section,
+.cta-section,
+.aegis-footer-main {
+    overflow-x: clip;
+}
+
+/* Fix for mobile browsers rendering fixed elements wrong */
+.main-navbar {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Ensure hero video covers correctly */
+.hero-video {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Fix for Safari rendering gaps */
+.gm-tabs,
+.ops-tabs,
+.fac-selector,
+.bp-tabs,
+.arsenal-categories,
+.rewards-filter {
+    -webkit-overflow-scrolling: touch;
+}
